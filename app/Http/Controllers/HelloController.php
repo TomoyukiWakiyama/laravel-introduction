@@ -11,9 +11,14 @@ class HelloController extends Controller
 {
     //
     
-    public function index () {
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。'];
-        // dd($data);
+    public function index (Request $request) {
+
+        return view('hello.index', ['message' => 'Hello!']);
+    }
+
+    public function post(Request $request){
+        $msg = $request->msg;
+        $data = ['msg' => 'こんにちは' . $msg . 'さん！'];
         return view('hello.index', $data);
     }
 }

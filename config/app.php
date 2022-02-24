@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // 演習でプロバイダーに直書きしたクラスを直接記載
+        App\Providers\HelloServiceProvider::class,
+
     ],
 
     /*

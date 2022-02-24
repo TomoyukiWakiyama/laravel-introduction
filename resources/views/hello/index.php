@@ -15,5 +15,8 @@
     <h1>Index</h1>
     <p><?php echo $msg; ?></p>
     <p><?php echo date('Y年n月j日'); ?></p>
+    <p>ID = <?php echo $id ?></p>
+    <p>TEXT = <?php echo $text ?></p>
+    <!-- http://localhost:8888/hello?id=fuck&text=you -->
 </body>
 </html>
