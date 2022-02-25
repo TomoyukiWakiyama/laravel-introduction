@@ -1,5 +1,5 @@
 @extends('layouts.helloapp')
-@section('title', 'Index')
+@section('title', 'Peson.index')
 
 @section('menubar')
     @parent
@@ -7,10 +7,12 @@
 @endsection
 
 @section('content')
-    <p>ここが本文のコンテンツです。</p>
     <table>
-        @foreach ($data as $item)
-            <tr><th>{{$item['name']}}</th><td>{{$item['mail']}}</td></tr>
+        <tr><th>Data</th></tr>
+        @foreach ($items as $item)
+            <tr>
+                <td>{{$item->getData()}}</td>
+            </tr>
         @endforeach
     </table>
 @endsection

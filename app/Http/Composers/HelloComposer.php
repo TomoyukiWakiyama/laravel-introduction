@@ -2,7 +2,7 @@
 namespace App\Http\Composers;
 use Illuminate\View\View;
 
-class HelloComposer 
+class HelloComposer
 {
     public function compose(View $view)
     {
