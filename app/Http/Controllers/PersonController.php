@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person; // Personモデルを呼び出せるようにする
-
+use Carbon\Carbon;
 
 class PersonController extends Controller
 {
@@ -43,6 +43,8 @@ class PersonController extends Controller
         $this->validate($request, Person::$rules);
         $person = new Person;
         $form = $request->all();
+        $form['second_time'] = Carbon::now();
+        // dd($form);
         unset($form['_token']);
         $person->fill($form)->save();
         return redirect('/person');
