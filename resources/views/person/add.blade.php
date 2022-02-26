@@ -32,14 +32,12 @@
                 <th>age: </th>
                 <td><input type="number" name="age" value="{{old('age')}}"></td>
             </tr>
-            {{-- <tr>
-                <th>second_time: </th>
-                <td><input type="time" name="second_time" value="{{old('second_time')}}"></td>
-            </tr> --}}
+
             <tr>
                 <th></th>
                 <td><input type="submit" value="send"></td>
             </tr>
         </table>
     </form>
+
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeopleTable extends Migration
+class CreateBoardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreatePeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('boards', function (Blueprint $table) {
             $table->unsignedBigInteger('id', true);
-            $table->string('name');
-            $table->string('mail');
-            $table->integer('age');
+            // peopleテーブルのidを割り当てる（誰の投稿かを紐付ける
+            $table->unsignedBigInteger('person_id');
+            $table->foreign('person_id')->references('id')->on('people');
+
+            $table->string('title');
+            $table->string('message');
             $table->timestamps();
+
+            
         });
     }
 
@@ -29,6 +34,6 @@ class CreatePeopleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('boards');
     }
 }

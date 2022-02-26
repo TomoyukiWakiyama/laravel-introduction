@@ -36,5 +36,16 @@ class PeopleTableSeeder extends Seeder
             'age' => 56,
         ];
         DB::table('people')->insert($param);
+
+        for($i=4; $i<10; $i++){
+            $param = [
+                'name' => 'user' . $i,
+                'mail' => 'user' . $i . '@fake.jp',
+                'age' => 30 + $i,
+            ];
+            DB::table('people')->insert($param);
+        }
+        
+        
     }
 }
